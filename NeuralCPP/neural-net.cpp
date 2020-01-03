@@ -18,3 +18,4 @@ int main() {
     myNet.backProp(targetVals);//what output should have been (backpropogation)
     myNet.getResults(resultVals);//after trained
 }
+//a test
