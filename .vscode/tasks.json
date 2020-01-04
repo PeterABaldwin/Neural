@@ -9,6 +9,7 @@
             "command": "g++",
             "args": [
                 "-o",
+                //"${fileDirname}\\${fileBasenameNoExtension}.exe",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe",
                 "${file}"
             ],
