@@ -38,9 +38,15 @@ void TrainingData::getTopology(vector<unsigned> &topology){
     string label;
 
     getline(m_trainingDataFile, line);
+    cout << "getline: " << getline(m_trainingDataFile, line) << endl;
     stringstream ss(line);
     ss >> label;
-    if (this->isEof() || label.compare("toplogy:") != 0){
+    if (this->isEof())  {
+    	cout << "topology error is isEof, label: " << label << endl;
+    	abort();
+	}
+	if (label.compare("topology:") != 0){
+		cout << "topology error is compare, label: " << label << endl;
         abort();
     }
 
@@ -252,14 +258,14 @@ void Net::backProp(const vector<double> &targetVals) {
         double delta = targetVals[n] - outputLayer[n].getOutputVal();//how far off from the target value
         m_error =+ delta * delta;
     }
-    m_error /= outputLayer.size() - 1;//get average error squared
+    m_error = outputLayer.size() - 1;//get average error squared
     m_error = sqrt(m_error);//RMS
 
     //implement a recent average measurement:
 
     m_recentAverageError = 
         (m_recentAverageError + m_recentAverageSmoothingFactor + m_error)
-        / (m_recentAverageSmoothingFactor +1.0);//print out how well the net has been doing (how well it's being trained)
+        / (m_recentAverageSmoothingFactor + 1.0);//print out how well the net has been doing (how well it's being trained)
 
     //calculate output layer gradients
 
@@ -341,11 +347,14 @@ void showVectorVals(string label, vector<double> &v){
 
 int main() {
 
-    TrainingData trainData("/tmp/trainingData.txt");
+    TrainingData trainData("trainingData.txt");
 
     vector<unsigned> topology;//array of values for amount of layers in the net
+    cout << "here " << endl;
     trainData.getTopology(topology);
+    cout << "here " << endl;
     Net myNet(topology);
+    cout << "here " << endl;
 
     vector<double> inputVals, targetVals, resultVals;
     int trainingPass = 0;
