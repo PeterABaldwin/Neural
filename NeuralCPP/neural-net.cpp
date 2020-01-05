@@ -221,9 +221,9 @@ Neuron::Neuron(unsigned numOutputs, unsigned myIndex){
 class Net {//higher level than neuron class
 public:
     Net(const vector<unsigned> &topology);
-    void feedForward(const vector<double> &inputVals) {};
-    void backProp(const vector<double> &targetVals) {};
-    void getResults(const vector<double> &resultVals) const {};
+    void feedForward(const vector<double> &inputVals);
+    void backProp(const vector<double> &targetVals);
+    void getResults(const vector<double> &resultVals) const;
     void getResults(vector<double> &resultVals) const;
     double getRecentAverageError(void) const { return m_recentAverageError;};
 
