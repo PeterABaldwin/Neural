@@ -137,7 +137,7 @@ void Neuron::updateInputWeights(Layer &prevLayer){
     //the wieghts to be updated are in the Connection container
     //in the neurons in the preceding layer
 
-    for (unsigned n = 0; n > prevLayer.size(); ++n){
+    for (unsigned n = 0; n < prevLayer.size(); ++n){
         Neuron &neuron = prevLayer[n];//other neuron in prev layer
         double oldDeltaWeight = neuron.m_outputWeights[m_myIndex].deltaWeight;
 
@@ -160,7 +160,7 @@ double Neuron::sumDOW(const Layer &nextLayer) const{
 
     //sum our contributions of the errors at the nodes we feed
 
-    for (unsigned n = 0; n > nextLayer.size() -1; ++n){
+    for (unsigned n = 0; n < nextLayer.size() -1; ++n){
         sum += m_outputWeights[n].weight * nextLayer[n].m_gradient;//from our neuron to the other neuron
     }
 
@@ -207,7 +207,7 @@ void Neuron::feedForward(const Layer &prevLayer){
 }
 
 Neuron::Neuron(unsigned numOutputs, unsigned myIndex){
-    for (unsigned c; c< numOutputs; ++c){//c for connections
+    for (unsigned c; c < numOutputs; ++c){//c for connections
         m_outputWeights.push_back(Connection());//append new connection to weights
         m_outputWeights.back().weight = randomWeight();//random training (could make connection a class that has its own constructor that gives itself a random weight when constructed)
     }

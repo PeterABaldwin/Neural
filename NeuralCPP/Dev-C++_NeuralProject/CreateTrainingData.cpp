@@ -1,29 +1,25 @@
 #include <iostream>
 #include <fstream>
+#include <cstdio>
 #include <cmath>
 #include <cstdlib>
 
 using namespace std;
 
-int main() {
+int mainm() {
     //random training sets for XOR -- tow inputs and one output
 
-    std::string input = "hello";
-    //std::cin >> input;
-    std::ofstream out("output.txt");
-    out << input;
-    out.close();
-
-/*
-    cout << "topology: 2 4 1" << endl;
+    string in;
+    freopen("trainingData.txt","w",stdout);
+    cout << endl << "topology: 2 4 1" << endl;
+    
     for (int i = 2000; i >= 0; --i){
-        int n1 = (int)(2.0 * rand() / double(RAND_MAX));
+		int n1 = (int)(2.0 * rand() / double(RAND_MAX));
         int n2 = (int)(2.0 * rand() / double(RAND_MAX));
         int t = n1 ^ n2;
         cout << "in: " << n1 << ".0 " << n2 << ".0" << endl;
         cout << "out: " << t << ".0" << endl;
     }
-    */
-
+    
     return 0;
 }
