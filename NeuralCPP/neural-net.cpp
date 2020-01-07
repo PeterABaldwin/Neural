@@ -19,6 +19,8 @@ using namespace std;
 
 //class to read data from a file
 
+//********** Class TrainingData **********
+
 class TrainingData {
 public:
     TrainingData(const string fileneme);
@@ -142,10 +144,20 @@ double Neuron::alpha = 0.5;//can experiment with different values
 void Neuron::updateInputWeights(Layer &prevLayer){
     //the wieghts to be updated are in the Connection container
     //in the neurons in the preceding layer
+    
+    cout << "prev size: " << prevLayer.size() - 1 << endl;
 
-    for (unsigned n = 0; n < prevLayer.size(); ++n){
+    for (unsigned n = 0; n < prevLayer.size() - 1; ++n){
         Neuron &neuron = prevLayer[n];//other neuron in prev layer
-        double oldDeltaWeight = neuron.m_outputWeights[m_myIndex].deltaWeight;
+        double oldDeltaWeight = neuron.m_outputWeights[neuron.m_myIndex].deltaWeight;
+        
+        cout << 
+            "index: " << neuron.m_myIndex << " | "
+            "old weight: " << neuron.m_outputWeights[neuron.m_myIndex].weight << " | "
+        	"old delta: " << oldDeltaWeight << " | "
+        	"output: " << neuron.getOutputVal() << " | "
+        	"graident: " << m_gradient << " | "
+        	;
 
         double newDeltaWeight =
             //individual input. magnified by the gradient and train rate;
@@ -156,8 +168,10 @@ void Neuron::updateInputWeights(Layer &prevLayer){
             * alpha //momentum (0.0 - no momentum, 0.5 moderate momentum)
             * oldDeltaWeight;
             
-        neuron.m_outputWeights[m_myIndex].deltaWeight = newDeltaWeight;
-        neuron.m_outputWeights[m_myIndex].weight =+ newDeltaWeight;
+        neuron.m_outputWeights[neuron.m_myIndex].deltaWeight = newDeltaWeight;
+        
+        neuron.m_outputWeights[neuron.m_myIndex].weight =+ newDeltaWeight;
+        cout << "new delta: " << neuron.m_outputWeights[neuron.m_myIndex].weight << endl;
     }
 }
 
@@ -216,6 +230,7 @@ Neuron::Neuron(unsigned numOutputs, unsigned myIndex){
     for (unsigned c; c < numOutputs; ++c){//c for connections
         m_outputWeights.push_back(Connection());//append new connection to weights
         m_outputWeights.back().weight = randomWeight();//random training (could make connection a class that has its own constructor that gives itself a random weight when constructed)
+        cout << "Neuron innitial weight: " << m_outputWeights.back().weight << endl;
     }
 
     m_myIndex = myIndex;
@@ -283,8 +298,6 @@ void Net::backProp(const vector<double> &targetVals) {
         }
     }
 
-    
-
     //for all layers from ouptus to first hidden layer,
     //update ocnnection weights
 
@@ -292,7 +305,10 @@ void Net::backProp(const vector<double> &targetVals) {
         Layer &layer = m_layers[layerNum];
         Layer &prevLayer = m_layers[layerNum - 1];
 
+        cout << endl << "layer: " << layerNum << " | size: " << layer.size() - 1; 
+
         for (unsigned n = 0; n < layer.size() - 1; ++n) {//index each individual neuron
+            cout << endl << "neuron: " << n << endl;
             layer[n].updateInputWeights(prevLayer);
         }
     }
@@ -322,10 +338,12 @@ Net::Net(const vector<unsigned> &topology) {
         m_layers.push_back(Layer());
         unsigned numOutputs = layerNum == topology.size() - 1 ? 0 : topology[layerNum + 1];// if output layer, go no further (output layer has no further outputs). else topology size plus bias
 
+        cout << endl << "made layer: " << m_layers.size()-1 << endl;
+
         //loop for putting neurons into created layer
         for (unsigned neuronNum = 0; neuronNum <= topology[layerNum]; ++neuronNum){// <= to include bias
             m_layers.back().push_back(Neuron(numOutputs, neuronNum));//.back gives last element
-            //cout << "made a Neuron!" << endl;
+            cout << "made neuron: " <<  m_layers.back().size()-1 << endl;
         }
 
         //force the biase node output value to 1.0. it's the last neuron created above
@@ -350,11 +368,8 @@ int main() {
     TrainingData trainData("trainingData.txt");
 
     vector<unsigned> topology;//array of values for amount of layers in the net
-    cout << "here " << endl;
     trainData.getTopology(topology);
-    cout << "here " << endl;
     Net myNet(topology);
-    cout << "here " << endl;
 
     vector<double> inputVals, targetVals, resultVals;
     int trainingPass = 0;
