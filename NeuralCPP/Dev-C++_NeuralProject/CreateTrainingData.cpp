@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int mainm() {
+int mainn() {
     //random training sets for XOR -- tow inputs and one output
 
     string in;

@@ -61,7 +61,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit2]
-FileName=..\neural-net.cpp
+FileName=neural-net.cpp
 CompileCpp=1
 Folder=
 Compile=1
