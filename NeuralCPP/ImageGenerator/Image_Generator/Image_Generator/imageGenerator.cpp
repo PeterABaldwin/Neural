@@ -111,13 +111,7 @@ void Image::MakeImage(int im, const char * name) {
 
 
     //write bmp
-
-    //const char * location = "/images/img_test" + g;
-    //char* test = new char[(string)size];
-    //const char * name = "img_test.bmp";
-    //name += ".bmp";
     bmp2.write(name);
-    //bmp2.write(name);
     /*
     //read bmp
     BMP bmp("/images/img_test.bmp");
