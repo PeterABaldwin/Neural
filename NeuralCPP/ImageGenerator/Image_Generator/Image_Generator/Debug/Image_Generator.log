@@ -1,4 +1,4 @@
 ﻿  imageGenerator.cpp
 C:\Users\Kriltch\Documents\GitHub\Neural\NeuralCPP\ImageGenerator\Image_Generator\Image_Generator\imageGenerator.cpp(33,22): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Kriltch\Documents\GitHub\Neural\NeuralCPP\ImageGenerator\Image_Generator\Image_Generator\imageGenerator.cpp(76,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Kriltch\Documents\GitHub\Neural\NeuralCPP\ImageGenerator\Image_Generator\Image_Generator\imageGenerator.cpp(99,23): warning C4018: '<': signed/unsigned mismatch
   Image_Generator.vcxproj -> C:\Users\Kriltch\Documents\GitHub\Neural\NeuralCPP\ImageGenerator\Image_Generator\Debug\Image_Generator.exe

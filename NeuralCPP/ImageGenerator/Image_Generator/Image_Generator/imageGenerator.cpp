@@ -68,23 +68,20 @@ Image::Image(const int gen) {
 
             i_img.back().push_back(generate(xy, gen*g, c));
         }
-        cout << "# of parts: " << i_img[g].size() << endl;
-    }
+        cout << "Image: " << g << " | part's made: " << i_img[g].size() << endl;
 
-    cout << "# of images: " << i_img.size() << endl;
 
-    for (int i = 0; i < i_img.size(); i++) {
         for (int c = 0; c < 4; c++) {
-            cout << "red: " << i_img[i][c].rgb[0] << " | ";
-            cout << "green: " << i_img[i][c].rgb[1] << " | ";
-            cout << "blue: " << i_img[i][c].rgb[2] << " | ";
-            cout << "position: x " << i_img[i][c].pos[0] << " y " << i_img[i][c].pos[1] << " | ";
+            cout << "red: " << i_img[g][c].rgb[0] << " | ";
+            cout << "green: " << i_img[g][c].rgb[1] << " | ";
+            cout << "blue: " << i_img[g][c].rgb[2] << " | ";
+            cout << "position: x " << i_img[g][c].pos[0] << " y " << i_img[g][c].pos[1] << " | ";
             cout << endl;
         }
 
         std::string s = "image";
 
-        s.append(std::to_string(i));
+        s.append(std::to_string(g));
         s.append(".jpg");
 
         char const* name = s.c_str();
@@ -93,8 +90,16 @@ Image::Image(const int gen) {
 
         cout << name << endl;
 
-        MakeImage(i, name);
+        MakeImage(g, name);
+    
     }
+
+    cout << "# of images: " << i_img.size() << endl;
+
+    for (int i = 0; i < i_img.size(); i++) {
+
+    }
+        
 }
 
 void Image::MakeImage(int im, const char * name) {
