@@ -24,7 +24,7 @@ private:
 };
 
 RGB::RGB(int px, int py, int s, int d) {
-    srand(time(NULL) + (s * d));
+    //srand(time(NULL) /*+ (s * d)*/);
     for (int i = 0; i < 4; i++) {//3 times for R, G, B
         rgb[i] = rand() % 255;
     }
@@ -45,6 +45,7 @@ public:
     vector<img> i_img;//for creating multiple images
     Image(const int g);
     void MakeImage(int im, const char* name);
+    void ReadImage();
 };
 
 Image::Image(const int gen) {
@@ -74,7 +75,7 @@ Image::Image(const int gen) {
         //create file name
         std::string s = "image";
         s.append(std::to_string(g));
-        s.append(".jpg");
+        s.append(".bmp");
         char const* name = s.c_str();
         //const char * name = ch + "img_test.jpg";
         cout << name << endl;
@@ -101,8 +102,14 @@ void Image::MakeImage(int im, const char* name) {
     bmp2.write(name);
 
     /*
-    //read bmp
-    BMP bmp("/images/img_test.bmp");
-    bmp.write("/images/img_copy");
+    
+    
     */
+}
+
+void Image::ReadImage() {
+    //read bmp
+    BMP bmp("image8.bmp");
+    //cout << bmp.data.size;
+    bmp.write("image9");
 }

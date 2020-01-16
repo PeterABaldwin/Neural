@@ -1,3 +1,2 @@
 ﻿  imageGenerator.cpp
-C:\Users\Kriltch\Documents\GitHub\Neural\NeuralCPP\ImageGenerator\Image_Generator\Image_Generator\Image.h(27,22): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Image_Generator.vcxproj -> C:\Users\Kriltch\Documents\GitHub\Neural\NeuralCPP\ImageGenerator\Image_Generator\Debug\Image_Generator.exe
+  Image_Generator.vcxproj -> C:\Users\Kriltch\Documents\GitHub\Neural\NeuralCPP\Image_Generator\Debug\Image_Generator.exe

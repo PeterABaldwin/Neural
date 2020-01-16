@@ -4,7 +4,6 @@
 using namespace std;
 
 int main() {
-
     cout << "how many itterations? ";
     string input = "1";
     cin >> input;
@@ -20,3 +19,4 @@ int main() {
 
     Image Img(gen);
 }
+
