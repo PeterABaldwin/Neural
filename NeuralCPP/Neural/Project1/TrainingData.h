@@ -12,11 +12,19 @@ public:
 
 	//returns the number of input values read from the file:
 	unsigned getNextInputs(vector<double>& inputVals);
+
+	unsigned getImage();
+
+
 	unsigned getTargetOutputs(vector<double>& targetOoutputVals);
 
 private:
 	ifstream m_trainingDataFile;
 };
+
+TrainingData::TrainingData(const string filename) {
+	m_trainingDataFile.open(filename.c_str());
+}
 
 void TrainingData::getTopology(vector<unsigned>& topology) {
 	string line;
@@ -44,8 +52,11 @@ void TrainingData::getTopology(vector<unsigned>& topology) {
 	return;
 }
 
-TrainingData::TrainingData(const string filename) {
-	m_trainingDataFile.open(filename.c_str());
+
+
+unsigned TrainingData::getImage() {
+
+	return 0;
 }
 
 unsigned TrainingData::getNextInputs(vector<double>& inputVals) {

@@ -2,6 +2,7 @@
  * from a tutorial https://www.youtube.com/watch?v=KkwX7FkLfug
  * XOR training
  * TODO: Add error checking... everywhere.
+ * get random files from trainign data
 **/
 
 #include <iostream>
@@ -24,22 +25,39 @@ void showVectorVals(string label, vector<double> &v) {
 
 int main() {
 
-	TrainingData trainData("trainingData.txt");
+	TrainingData TDIn("t10k-images-idx3-ubyte");
+	TrainingData TDExpectedOut("t10k-images-idx3-ubyte");
+	TrainingData top("Topology.txt");
 
 	vector<unsigned> topology;//array of values for amount of layers in the net
-	trainData.getTopology(topology);
+	top.getTopology(topology);
 
 	Net myNet(topology);
 
 	vector<double> inputVals, targetVals, resultVals;
-	int trainingPass = 0;
 
-	while (!trainData.isEof()) {
+
+	
+	//first, get random image from dataset, then put into NN. Do this as a loop for training data size (make arbitrary at first)
+	
+
+	
+
+	cout << endl << "Done!" << endl;
+
+	string useless;
+	cin >> useless;
+	
+
+
+	/*//old
+	int trainingPass = 0;
+	while (!TDIn.isEof()) {
 		++trainingPass;
 		cout << endl << "Pass " << trainingPass;
 
 		//get new input data and feed it forward;
-		if (trainData.getNextInputs(inputVals) != topology[0]) {
+		if (TDIn.getNextInputs(inputVals) != topology[0]) {
 			break;
 		}
 		showVectorVals(": Inputs:", inputVals);
@@ -50,7 +68,7 @@ int main() {
 		showVectorVals("Outputs", resultVals);
 
 		//trian the net what the ouptus should have been:
-		trainData.getTargetOutputs(targetVals);
+		TDExpectedOut.getTargetOutputs(targetVals);
 		showVectorVals("Targets:", targetVals);
 		assert(targetVals.size() == topology.back());
 
@@ -61,13 +79,10 @@ int main() {
 			<< myNet.getRecentAverageError() << endl;
 	}
 
-	cout << endl << "Done!" << endl;
-	string useless;
-	cin >> useless;
 
 
-	//old
-	/*topology.push_back(3);
+
+	topology.push_back(3);
 	topology.push_back(2);
 	topology.push_back(1);*/
 	/*
