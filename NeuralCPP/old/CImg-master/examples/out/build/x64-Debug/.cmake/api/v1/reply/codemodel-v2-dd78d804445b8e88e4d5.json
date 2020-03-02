@@ -1,0 +1,320 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.6"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Examples-CIMG",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CImg_demo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CImg_demo-Debug-0d1cf8371af20859dea7.json",
+					"name" : "CImg_demo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "captcha::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-captcha-Debug-76c6a6e3db79eb2d91a6.json",
+					"name" : "captcha",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "curve_editor2d::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-curve_editor2d-Debug-bb5d8d45981638152417.json",
+					"name" : "curve_editor2d",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dtmri_view3d::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dtmri_view3d-Debug-0a52d15cc0032d59d32c.json",
+					"name" : "dtmri_view3d",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "edge_explorer2d::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-edge_explorer2d-Debug-ad839339f25d3215c660.json",
+					"name" : "edge_explorer2d",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fade_images::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fade_images-Debug-f5441d3bafe3f0ec1a31.json",
+					"name" : "fade_images",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "gaussian_fit1d::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gaussian_fit1d-Debug-8bc4f479a99d39185499.json",
+					"name" : "gaussian_fit1d",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_loop_macros::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_loop_macros-Debug-346cffb738c0fe850856.json",
+					"name" : "generate_loop_macros",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "hough_transform2d::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hough_transform2d-Debug-35ffdd156ae152a7c24f.json",
+					"name" : "hough_transform2d",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "image2ascii::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-image2ascii-Debug-202f5f29714759414f31.json",
+					"name" : "image2ascii",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "image_registration2d::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-image_registration2d-Debug-859738bd722c3e2cdcb5.json",
+					"name" : "image_registration2d",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "image_surface3d::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-image_surface3d-Debug-9c80deae7d5f3024191f.json",
+					"name" : "image_surface3d",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "jawbreaker::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-jawbreaker-Debug-5141cdb4d4a2d42e03b8.json",
+					"name" : "jawbreaker",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mcf_levelsets2d::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mcf_levelsets2d-Debug-d0d4606e1c8b4c869ac9.json",
+					"name" : "mcf_levelsets2d",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mcf_levelsets3d::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mcf_levelsets3d-Debug-7e6e53f7f30dbac06d72.json",
+					"name" : "mcf_levelsets3d",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "odykill::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-odykill-Debug-e92dabb10c2cd02be0b2.json",
+					"name" : "odykill",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pde_TschumperleDeriche2d::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pde_TschumperleDeriche2d-Debug-5a9d0fc04ff0deff4591.json",
+					"name" : "pde_TschumperleDeriche2d",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pde_heatflow2d::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pde_heatflow2d-Debug-e63492015df4e162c588.json",
+					"name" : "pde_heatflow2d",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "plotter1d::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-plotter1d-Debug-068a65875048dbad87ca.json",
+					"name" : "plotter1d",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "radon_transform2d::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-radon_transform2d-Debug-91991592f8e7b486518f.json",
+					"name" : "radon_transform2d",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "scene3d::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-scene3d-Debug-73f7785e6648f728e7f6.json",
+					"name" : "scene3d",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "spherical_function3d::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-spherical_function3d-Debug-1b4cdc1fde4f7122ee5b.json",
+					"name" : "spherical_function3d",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tetris::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tetris-Debug-72f5b1aed476a46e01f9.json",
+					"name" : "tetris",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tron::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tron-Debug-c705406f776a5cbfff4f.json",
+					"name" : "tron",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tutorial::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tutorial-Debug-9c25e82f7dea2d206acd.json",
+					"name" : "tutorial",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "use_RGBclass::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-use_RGBclass-Debug-4261a460eec9ab5b56c8.json",
+					"name" : "use_RGBclass",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "use_draw_gradient::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-use_draw_gradient-Debug-a7d0a91809ea7bbb64d2.json",
+					"name" : "use_draw_gradient",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "use_nlmeans::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-use_nlmeans-Debug-51d863dd24b9c6b76697.json",
+					"name" : "use_nlmeans",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "use_skeleton::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-use_skeleton-Debug-8dcfbfc456fefb8fc889.json",
+					"name" : "use_skeleton",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wavelet_atrous::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wavelet_atrous-Debug-496d4f74dc2f555b3d8c.json",
+					"name" : "wavelet_atrous",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Kriltch/Desktop/CImg-master/examples/out/build/x64-Debug",
+		"source" : "C:/Users/Kriltch/Desktop/CImg-master/examples"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

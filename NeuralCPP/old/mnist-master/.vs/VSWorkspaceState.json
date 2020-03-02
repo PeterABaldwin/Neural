@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\example",
+    "\\example\\out",
+    "\\example\\out\\build",
+    "\\include",
+    "\\include\\mnist"
+  ],
+  "SelectedNode": "\\sonar-project.properties",
+  "PreviewInSolutionExplorer": false
+}
