@@ -1,3 +1,0 @@
-C:/Users/Kriltch/Desktop/mnist-master/example/out/build/x64-Debug/CMakeFiles/mnist_example.dir
-C:/Users/Kriltch/Desktop/mnist-master/example/out/build/x64-Debug/CMakeFiles/edit_cache.dir
-C:/Users/Kriltch/Desktop/mnist-master/example/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
