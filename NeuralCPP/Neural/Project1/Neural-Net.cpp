@@ -5,62 +5,34 @@
  * get random files from trainign data
 **/
 
+#pragma warning(disable : 4996) //_CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include "TrainingData.h"
 #include "NeuralNet.h"
+#include "Misc.h"
 
-using namespace std;
+//using namespace std;
 
-/*
-* Param: 
-*/
-void showVectorVals(string label, vector<double> &v) {
-	cout << label << " ";
-	for (unsigned i = 0; i < v.size(); ++i) {
-		cout << v[i] << " ";
-	}
+TrainingData top;
+TrainingData TDExpectedOut;
+TrainingData TDIn;
+vector<double> inputVals, targetVals, resultVals;
+vector<unsigned> topology;//array of values for amount of layers in the net
+Net myNet;
 
-	cout << endl;
-}
-
-int main() {
-
-	TrainingData TDIn("t10k-images-idx3-ubyte");
-	TrainingData TDExpectedOut("t10k-images-idx3-ubyte");
-	TrainingData top("Topology.txt");
-
-	vector<unsigned> topology;//array of values for amount of layers in the net
-	top.getTopology(topology);
-
-	Net myNet(topology);
-
-	vector<double> inputVals, targetVals, resultVals;
-
-
-	
-	//first, get random image from dataset, then put into NN. Do this as a loop for training data size (make arbitrary at first)
-	
-
-	
-
-	cout << endl << "Done!" << endl;
-
-	string useless;
-	cin >> useless;
-	
-
-
-	/*//old
+void train() {
 	int trainingPass = 0;
-	while (!TDIn.isEof()) {
+	for (int j = 0; j < 10; j++) {
+		cout << "td?: " << TDIn.isEof() << endl;
+		//while (!TDIn.isEof()) {
 		++trainingPass;
-		cout << endl << "Pass " << trainingPass;
+		cout << endl << "Pass " << trainingPass << endl;
 
 		//get new input data and feed it forward;
 		if (TDIn.getNextInputs(inputVals) != topology[0]) {
 			break;
 		}
-		showVectorVals(": Inputs:", inputVals);
+		//showVectorVals(": Inputs:", inputVals);//displays input values
 		myNet.feedForward(inputVals);
 
 		//collect the net's actual results:
@@ -70,7 +42,11 @@ int main() {
 		//trian the net what the ouptus should have been:
 		TDExpectedOut.getTargetOutputs(targetVals);
 		showVectorVals("Targets:", targetVals);
-		assert(targetVals.size() == topology.back());
+
+		//change to new function that gets output based on image name from other file
+		//depending on which itme it is, make 1 through 10 all zeroes excet for the place designated for the image type as 1
+
+		assert(targetVals.size() == topology.back());//make sure topology is correct
 
 		myNet.backProp(targetVals);
 
@@ -78,22 +54,73 @@ int main() {
 		cout << "net recent average error: "
 			<< myNet.getRecentAverageError() << endl;
 	}
+}
+void predict() {
+	int trainingPass = 0;
+	++trainingPass;
+	cout << endl << "Pass " << trainingPass << endl;
 
+	if (TDIn.getNextInputs(inputVals) != topology[0]) {
+		abort();
+	}
+	myNet.feedForward(inputVals);
 
+	myNet.getResults(resultVals);
+	showVectorVals("Outputs", resultVals);
 
+	//not needed here but included for testing
+	TDExpectedOut.getTargetOutputs(targetVals);
+	showVectorVals("Targets:", targetVals);
+}
 
-	topology.push_back(3);
-	topology.push_back(2);
-	topology.push_back(1);*/
-	/*
-	vector<double> inputVals;//std:: from C++ library (can remove if it feels like clutter) (vectors are std)
-	myNet.feedForward(inputVals);//training
+int main() {
+	string imgName = "4";
 
-	vector<double> targetVals;
-	myNet.backProp(targetVals);//what output should have been (backpropogation)
+	//int topo[4] = { 1765000, 16, 16, 10 };//using 4 as length
+	int topo[4] = { 10000, 16, 16, 10 };//using 4 as length
+	topologyGen(topo, 4);//makes topology to use
+	//needs a gig or memory for the 353x500 image?!
 
-	vector<double> resultVals;
-	myNet.getResults(resultVals);//after trained
-	*/
-	return 1;
+	string in = "image";
+	in.append(".txt");
+	string expOut = "expected - Copy";
+	expOut.append(".txt");
+
+	top.open("topology.txt");
+	top.getTopology(topology);
+	myNet.genNet(topology);
+
+	cout << endl << "Done setting up NN" << endl;
+
+	bool i = true;
+	do {
+
+		TDExpectedOut.open(expOut);
+		TDIn.open(in);
+
+		cout << endl << "2 for image, 1 for trian, 0 for predict" << endl;
+		int inp;
+		cin >> inp;
+		switch (inp) {
+		case 0:
+			predict();
+			break;
+		case 1:
+			train();
+			myNet.writeWeight();//writes created weights to file
+		case 2:
+			image(imgName);
+			break;
+		default:
+			i = false;
+			break;
+		}
+
+		TDIn.close();
+		TDExpectedOut.close();
+	} while (i);
+
+	//compare output vals and depending on which one is highest depends on what program outputs
+
+	//Input layer should be array size of largest image from dataset (will be one size as allimages will be the same size from true training)
 }

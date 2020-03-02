@@ -1,1 +1,1 @@
-topology: 729 16 16 10
+topology: 10000 16 16 10
